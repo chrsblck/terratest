@@ -31,6 +31,7 @@ jobs:
             - $HOME/.go_workspace/src/github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/test/vendor
 
       # Run pre-commit hooks and fail the build if any hook finds required changes.
+      - run: go get golang.org/x/tools/cmd/goimports
       - run: pip install pre-commit
       - run: pre-commit install
       - run: pre-commit run --all-files
