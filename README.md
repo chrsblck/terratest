@@ -57,16 +57,16 @@ validateServerIsWorking(t, terraformOptions)
 Prerequisite: install [Go](https://golang.org/).
 
 To add Terratest to your projects, we recommend using a Go dependency manager such as
-[dep](https://github.com/golang/dep):
+[dep](https://github.com/golang/dep) to add the packages you wish to use (see [package by package overview](#package-by-package-overview) for the list). For example, to add the `terraform` package:
 
 ```bash
-dep ensure -add github.com/gruntwork-io/terratest
+dep ensure -add github.com/gruntwork-io/terratest/modules/terraform
 ```
 
 Alternatively, you can use `go get`:
 
 ```bash
-go get github.com/gruntwork-io/terratest
+go get github.com/gruntwork-io/terratest/modules/terraform
 ```
 
 
