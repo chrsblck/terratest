@@ -39,11 +39,11 @@ terraformOptions := &terraform.Options {
   TerraformDir: "../examples/terraform-basic-example",
 }
 
-// This will run `terraform init` and `terraform apply` and fail the test if there are any errors
-terraform.InitAndApply(t, terraformOptions)
-
 // At the end of the test, run `terraform destroy` to clean up any resources that were created
 defer terraform.Destroy(t, terraformOptions)
+
+// This will run `terraform init` and `terraform apply` and fail the test if there are any errors
+terraform.InitAndApply(t, terraformOptions)
 
 // Validate your code works as expected
 validateServerIsWorking(t, terraformOptions)
